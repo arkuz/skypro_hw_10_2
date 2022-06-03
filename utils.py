@@ -13,10 +13,10 @@ def load_candidates():
     return _load_json_file(CANDIDATES_FILE)
 
 
-def get_candidate_by_name(candidates, name):
-    for candidat in candidates:
-        if candidat['name'].lower() == name.lower():
-            return candidat
+def get_candidate_by_id(candidates, id):
+    for candidate in candidates:
+        if candidate['id'] == id:
+            return candidate
     return None
 
 

@@ -1,8 +1,9 @@
 from flask import Flask
 from utils import (load_candidates,
-                   get_candidate_by_name,
+                   get_candidate_by_id,
                    get_candidates_by_skill,
-                   get_formatted_candidates, get_formatted_candidate)
+                   get_formatted_candidates,
+                   get_formatted_candidate)
 
 app = Flask(__name__)
 
@@ -12,11 +13,11 @@ def index():
     return get_formatted_candidates(load_candidates())
 
 
-@app.route("/candidates/<name>")
-def candidate_by_name(name):
-    candidate = get_candidate_by_name(load_candidates(), name)
+@app.route("/candidates/<int:id>")
+def candidate_by_name(id):
+    candidate = get_candidate_by_id(load_candidates(), id)
     if candidate is None:
-        return f'В списке кандидатов не найден "{name}"'
+        return f'Кандидат с id={id} не найден'
     return get_formatted_candidate(candidate)
 
 
