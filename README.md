@@ -22,8 +22,8 @@ python app.py
 ```
 ### Примеры тестовых запросов
 ```bash
-1. http://127.0.0.1:5000/candidates/Sheri%20Torres
-2. http://127.0.0.1:5000/candidates/Sheri%20Torres123
+1. http://127.0.0.1:5000/candidates/1
+2. http://127.0.0.1:5000/candidates/500
 3. http://127.0.0.1:5000/
 4. http://127.0.0.1:5000/skills/PyThOn
 5. http://127.0.0.1:5000/skills/PyThOn345
