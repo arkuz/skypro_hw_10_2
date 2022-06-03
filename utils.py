@@ -23,7 +23,9 @@ def get_candidate_by_name(candidates, name):
 def get_candidates_by_skill(candidates, skill):
     candidates_with_skill = []
     for candidat in candidates:
-        if skill.lower() in candidat['skills'].lower():
+        skills = [skill.lower().strip() for skill in candidat['skills'].split(',')]
+        print(skills)
+        if skill.lower() in skills:
             candidates_with_skill.append(candidat)
     return candidates_with_skill
 
